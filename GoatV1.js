@@ -1,4 +1,4 @@
-console.log("This code uses Goat.js V1 by Luke Evanson. The official page is at projects.lukeevanson.com/goat.js");
+console.log("This code uses Goat.js V1 by Luke Evanson. The official page is at projects.lukeevanson.com/goat.js The purpose of this library is to make coding in JS fun and easier.");
 
 function konami(message) {
   const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a','Enter'];
