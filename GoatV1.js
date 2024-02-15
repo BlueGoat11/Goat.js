@@ -1,26 +1,19 @@
-function konami {
-  var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-var current = 0;
+console.log("This code uses Goat.js V1 by Luke Evanson. The official page is at projects.lukeevanson.com/goat.js");
 
-var keyHandler = function (event) {
+function konami(message) {
+  const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a','Enter'];
 
-	// If the key isn't in the pattern, or isn't the current key in the pattern, reset
-	if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
-		current = 0;
-		return;
-	}
+  let progress = 0;
 
-	// Update how much of the pattern is complete
-	current++;
-
-	// If complete, alert and reset
-	if (pattern.length === current) {
-		current = 0;
-		window.alert('You found it!');
-	}
-
-};
-
-// Listen for keydown events
-document.addEventListener('keydown', keyHandler, false);
+  document.addEventListener('keydown', function(event) {
+    if (event.key === konamiCode[progress]) {
+      progress++;
+      if (progress === konamiCode.length) {
+        alert(message);
+        progress = 0;
+      }
+    } else {
+      progress = 0;
+    }
+  });
 }
