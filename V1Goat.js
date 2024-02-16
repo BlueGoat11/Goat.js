@@ -30,3 +30,24 @@ function getscreenwidth() {
 function getscreenheight() {
     screenheight = screen.availHeight
 }
+
+function setcookie(name, info) {
+  document.cookie = `${name}=${info}`;
+}
+
+function getCookie(cookieName) {
+  const cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith(cookieName + '=')) {
+      const cookieValue = cookie.substring(cookieName.length + 1);
+      alert(cookieValue);
+      document.getElementById('cookie').innerHTML = cookieValue;
+      break;
+    }
+  }
+}
+
+function deleteCookie(cookieName) {
+  document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
