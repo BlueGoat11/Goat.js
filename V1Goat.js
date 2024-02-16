@@ -17,3 +17,16 @@ function konami(message) {
     }
   });
 }
+
+function popup(txt) {
+    window.alert(txt);
+    console.log(txt);
+}
+
+function getscreenwidth() {
+    screenwidth = screen.availWidth
+}
+
+function getscreenheight() {
+    screenheight = screen.availHeight
+}
